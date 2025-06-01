@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Captura</title>
+  <style>
+    body {
+      background: #d3d3d3;
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      max-width: 800px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+    .left {
+      flex: 1 1 320px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 280px;
+      box-sizing: border-box;
+    }
+    .left h1 {
+      font-size: 2.2rem;
+      margin: 0 0 16px 0;
+      font-weight: 700;
+      color: #23272a;
+    }
+    .left p {
+      color: #555;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    .left form {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .left label {
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .left input {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .left input:focus {
+      border: 1.5px solid #23272a;
+    }
+    .left button {
+      margin-top: 8px;
+      padding: 14px;
+      background: #23272a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .left button:hover {
+      background: #444;
+    }
+    .privacy {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #888;
+      text-align: center;
+    }
+    .right {
+      flex: 1 1 320px;
+      background: #f7f5f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 280px;
+      padding: 32px 0;
+    }
+    .right img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      margin-bottom: 24px;
+    }
+    .right h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      color: #23272a;
+      letter-spacing: 1px;
+    }
+    .right p {
+      font-size: 1.1rem;
+      color: #444;
+      margin: 0;
+      text-align: center;
+    }
+    @media (max-width: 800px) {
+      .container {
+        flex-direction: column;
+        max-width: 95vw;
+        border-radius: 16px;
+      }
+      .right, .left {
+        min-width: 0;
+        width: 100%;
+        padding: 32px 16px;
+        box-sizing: border-box;
+      }
+      .right img {
+        width: 160px;
+        height: 160px;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        padding: 0;
+      }
+      .left {
+        padding: 28px 20px 28px 20px !important;
+      }
+      .right {
+        padding: 28px 0 0 0 !important;
+      }
+      .left h1 {
+        margin-bottom: 20px;
+      }
+      .left p {
+        margin-bottom: 16px;
+        font-size: 1.08rem;
+      }
+      .left form {
+        gap: 18px;
+        margin-top: 32px;
+      }
+      .left label {
+        margin-bottom: 6px;
+      }
+      .privacy {
+        margin-top: 20px;
+      }
+    }
+    @media (max-width: 500px) {
+      .container {
+        margin: 0 0;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      }
+      .left, .right {
+        padding: 16px 4px;
+      }
+    }
+    @media (max-width: 800px) {
+      .container {
+        flex-direction: column;
+      }
+      .right {
+        order: -1;
+      }
+      .left {
+        order: 2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>Olá!</h1>
+      <p>Cadastre-se abaixo para receber um treinamento gratuito de sistemas de conteúdo!</p>
+      <p>Aprenda a criar seus próprios sistemas para simplificar sua produção de conteúdo e ganhar tempo.</p>
+      <p>Confira sua caixa de spam após o cadastro.</p>
+      <form autocomplete="off">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Seu email" required>
+        <label for="whatsapp">Whatsapp</label>
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="Whatsapp (apenas números)" required pattern="[\d\s\-\(\)]{13,}" maxlength="20">
+        <button type="submit">Quero receber o treinamento</button>
+      </form>
+      <div class="privacy">Respeitamos sua privacidade. Você pode se descadastrar a qualquer momento.</div>
+    </div>
+    <div class="right">
+      <img src="https://images.unsplash.com/photo-1746157802345-8bfd4eff66be?q=80&w=3344&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagem de destaque">
+      <h2>Treinamento</h2>
+      <p><strong>BIG CONTENT SYSTEMS</strong></p>
+    </div>
+  </div>
+</body>
+</html> 
